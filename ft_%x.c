@@ -30,7 +30,7 @@ int	ft_hex(unsigned int nbr, char *base)
 	len = ft_taille(nbr);
 	str = malloc(sizeof(char) * len + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	str[len] = '\0';
 	while (len--)
 	{

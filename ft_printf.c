@@ -40,7 +40,7 @@ int	ft_printf(const char *str, ...)
 			i++;
 		}
 		else
-			nb_args += ft_putchar(str[i]);
+			nb_args += ft_putchar_mod(str[i]);
 		if(str[i])
 			return (nb_args);
 		i++;
