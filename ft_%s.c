@@ -12,8 +12,8 @@ int	ft_putstr_mod(char *s)
 	}
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		ft_putchar_mod(s[i]);
 		i++;	
 	}
-	retrun (i);
+	return (i);
 }

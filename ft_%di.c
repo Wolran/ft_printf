@@ -1,25 +1,8 @@
 #include "ft_printf.h"
 
-int	ft_putnbr_mod(int n)
-{
-	unsigned int	test;
-
-	if (n < 0)
-	{
-		test = n * -1;
-		ft_putchar_mod('-');
-	}
-	else
-		test = n;
-	if (test > 9)
-		ft_putnbr_mod(test / 10);
-	ft_putchar_mod('0' + (test % 10));
-	return (ft_dec_len(test));
-}
-
 static int	ft_dec_len(int nb)
 {
-	size_t			count;
+	int				count;
 	long long int	nbr;
 
 	count = 0;
@@ -38,3 +21,27 @@ static int	ft_dec_len(int nb)
 	}
 	return (count);
 }
+
+int	ft_putnbr_mod(int n)
+{
+	int	test;
+
+	test = 0;
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", (test += 11));
+		return (test);
+	}
+	if (n < 0)
+	{
+		test = n * -1;
+		ft_putchar_mod('-');
+	}
+	else
+		test = n;
+	if (test > 9)
+		ft_putnbr_mod(test / 10);
+	ft_putchar_mod('0' + (test % 10));
+	return (ft_dec_len(test));
+}
+

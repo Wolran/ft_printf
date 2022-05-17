@@ -19,7 +19,7 @@ int ft_argp(void *str)
 	unsigned long test;
 	
 	test = (unsigned long)str;
-	ft_putstr_mod("0x");
-	ft_putnbr_base(test, "0123456789abcdef")
-	retrurn (ft_hex_len(test) + 2);
+	write(1, "0", 1);
+	ft_putnbr_base(test, "0123456789abcdef");
+	return (ft_hex_len(test) + 2);
 }

@@ -55,7 +55,7 @@ static void	ft_putnbr_recurs(int nbr, char *base, unsigned int i)
 	ft_putchar(base[test % i]);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(unsigned long long int nbr, char *base)
 {
 	unsigned int	i;
 

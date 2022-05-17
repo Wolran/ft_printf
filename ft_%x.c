@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static int	ft_taille(unsigned int nbr)
+static int	ft_taille(unsigned long long int nbr)
 {
 	int	len;
 
@@ -15,30 +15,30 @@ static int	ft_taille(unsigned int nbr)
 	return (len);
 }
 
-int	ft_hex(unsigned int nbr, char *base)
+int	ft_hex(unsigned int n, char *base)
 {
 	int			point;
 	int			count;
 	int			len;
-	char		*str;
+	char		*strnbr;
 
-	if (nbr == 0)
+	if (n == 0)
 	{
 		count = write (1, "0", 1);
 		return (count);
 	}
-	len = ft_taille(nbr);
-	str = malloc(sizeof(char) * len + 1);
-	if (!str)
-		return (NULL);
-	str[len] = '\0';
+	len = ft_taille(n);
+	strnbr = malloc(sizeof(char) * len + 1);
+	if (!strnbr)
+		return (0);
+	strnbr[len] = '\0';
 	while (len--)
 	{
-		point = nbr % 16;
-		str[len] = base[point];
-		nbr /= 16;
+		point = n % 16;
+		strnbr[len] = base[point];
+		n /= 16;
 	}
-	count = ft_putstr_mod(str);
-	free(str);
+	count = ft_putstr_mod(strnbr);
+	free(strnbr);
 	return (count);
 }
