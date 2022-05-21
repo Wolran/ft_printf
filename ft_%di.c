@@ -42,6 +42,6 @@ int	ft_putnbr_mod(int n)
 	if (test > 9)
 		ft_putnbr_mod(test / 10);
 	ft_putchar_mod('0' + (test % 10));
-	return (ft_dec_len(test));
+	return (ft_dec_len(n));
 }
 

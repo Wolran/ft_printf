@@ -14,6 +14,6 @@ int		ft_putstr_mod(char *s);
 int		ft_putchar_mod(char c);
 int		ft_putnbr_u(unsigned int n);
 int 	ft_argp(void *str);
-void	ft_putnbr_base(unsigned long long int nbr, char *base);
+void	ft_putnbr_base(unsigned long long int nb, char *base);
 
 #endif

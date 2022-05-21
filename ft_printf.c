@@ -41,9 +41,10 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 			nb_args += ft_putchar_mod(str[i]);
-	if (str[i] == '\0')
-		return (nb_args);
+		if (str[i] == '\0')
+			return (nb_args);
 		i++;
 	}
+	va_end(args);
 	return (nb_args);
 }

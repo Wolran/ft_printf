@@ -5,8 +5,6 @@ static int	ft_taille(unsigned long long int nbr)
 	int	len;
 
 	len = 0;
-	if (nbr < 0)
-		len += 1;
 	while (nbr != 0)
 	{
 		nbr = nbr / 16;

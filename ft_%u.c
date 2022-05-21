@@ -2,7 +2,7 @@
 
 int	ft_putnbr_u(unsigned int n)
 {
-	int count = 0;
+	int count = 1;
 
 	if (n > 9)
 	{

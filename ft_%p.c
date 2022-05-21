@@ -12,6 +12,7 @@ static int	ft_hex_len(unsigned long nb)
 		nb /= 16;
 		count++;
 	}
+	return (count);
 }
 
 int ft_argp(void *str)
@@ -19,7 +20,7 @@ int ft_argp(void *str)
 	unsigned long test;
 	
 	test = (unsigned long)str;
-	write(1, "0", 1);
+	write(1, "0x", 2);
 	ft_putnbr_base(test, "0123456789abcdef");
 	return (ft_hex_len(test) + 2);
 }
