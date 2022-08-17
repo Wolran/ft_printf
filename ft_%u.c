@@ -1,18 +1,31 @@
 #include "ft_printf.h"
 
-int	ft_putnbr_u(unsigned int n)
+static int	ft_len_m(unsigned long long int n)
 {
-	int count = 1;
+	size_t count;
 
-	if (n > 9)
+	count = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
 	{
-		ft_putnbr_u(n / 10);
-		ft_putnbr_u(n % 10);
-	}
-	else
-	{
-		ft_putchar_mod(n + 48);
-		count++;
+		n = n / 10;
+		count ++;
 	}
 	return (count);
+}
+
+int	ft_putnbr_u(unsigned int n)
+{
+	unsigned long long int nb;
+	
+	nb = n;
+	if (nb > 9)
+	{
+		ft_putnbr_u(nb / 10);
+		ft_putnbr_u(nb % 10);
+	}
+	else
+		ft_putchar_mod(nb + 48);
+	return (ft_len_m(n));
 }

@@ -20,6 +20,11 @@ int ft_argp(void *str)
 	unsigned long test;
 	
 	test = (unsigned long)str;
+	if (!str)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
 	write(1, "0x", 2);
 	ft_putnbr_base(test, "0123456789abcdef");
 	return (ft_hex_len(test) + 2);
